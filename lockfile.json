@@ -1,0 +1,360 @@
+{
+ "graph_lock": {
+  "nodes": {
+   "0": {
+    "requires": [
+     "1",
+     "4"
+    ],
+    "build_requires": [
+     "52"
+    ],
+    "path": "conanfile.txt",
+    "context": "host"
+   },
+   "1": {
+    "ref": "magnum/2020.06#1eb5d470c892b4a40807771211141934",
+    "requires": [
+     "2",
+     "3"
+    ],
+    "build_requires": [
+     "42",
+     "43"
+    ],
+    "context": "host"
+   },
+   "2": {
+    "ref": "corrade/2020.06#0895988f51a779301903a218ba871f8a",
+    "build_requires": [
+     "19",
+     "20"
+    ],
+    "context": "host"
+   },
+   "3": {
+    "ref": "opengl/system#3582b5d3184289461f73339622c71d31",
+    "build_requires": [
+     "30"
+    ],
+    "context": "host"
+   },
+   "4": {
+    "ref": "magnum-plugins/2020.06#f6b08f1fb31c192f6f34b558b7d5426a",
+    "requires": [
+     "1",
+     "5",
+     "14",
+     "15",
+     "16"
+    ],
+    "build_requires": [
+     "49",
+     "50"
+    ],
+    "context": "host"
+   },
+   "5": {
+    "ref": "assimp/5.0.1#43db6d69235ca7582c538cc2149c5533",
+    "requires": [
+     "6",
+     "7",
+     "10",
+     "11",
+     "12",
+     "13",
+     "8"
+    ],
+    "build_requires": [
+     "47"
+    ],
+    "context": "host"
+   },
+   "6": {
+    "ref": "irrxml/1.2#917d71a52435389b9f485867e907410b",
+    "build_requires": [
+     "22"
+    ],
+    "context": "host"
+   },
+   "7": {
+    "ref": "minizip/1.2.11#0658b664480f2a0755b88502743d5d0d",
+    "requires": [
+     "8",
+     "9"
+    ],
+    "build_requires": [
+     "45"
+    ],
+    "context": "host"
+   },
+   "8": {
+    "ref": "zlib/1.2.11#b3eaf63da20a8606f3d84602c2cfa854",
+    "build_requires": [
+     "38"
+    ],
+    "context": "host"
+   },
+   "9": {
+    "ref": "bzip2/1.0.8#9c8b632000a52af5af3f045d3a6db12f",
+    "build_requires": [
+     "17"
+    ],
+    "context": "host"
+   },
+   "10": {
+    "ref": "utfcpp/3.1.2#17b3a6568741db487e3d4e702d3569f4",
+    "build_requires": [
+     "36"
+    ],
+    "context": "host"
+   },
+   "11": {
+    "ref": "kuba-zip/0.1.31#721d14bfeb76af46bac1b2b3163352cf",
+    "build_requires": [
+     "24"
+    ],
+    "context": "host"
+   },
+   "12": {
+    "ref": "poly2tri/cci.20130502#0b7bb1e3ceafdc8da17b0984eeda3d77",
+    "build_requires": [
+     "32"
+    ],
+    "context": "host"
+   },
+   "13": {
+    "ref": "rapidjson/cci.20200410#abe3eeacf36801901f6f6d82d124781a",
+    "build_requires": [
+     "34"
+    ],
+    "context": "host"
+   },
+   "14": {
+    "ref": "libjpeg/9d#e697546ac363c54eae00117f83501c40",
+    "build_requires": [
+     "26"
+    ],
+    "context": "host"
+   },
+   "15": {
+    "ref": "meshoptimizer/0.15#9c2724ca960495f496a29019371e051c",
+    "build_requires": [
+     "28"
+    ],
+    "context": "host"
+   },
+   "16": {
+    "ref": "libpng/1.6.37#08b5607052686860a2e40d5db6166d9f",
+    "requires": [
+     "8"
+    ],
+    "build_requires": [
+     "40"
+    ],
+    "context": "host"
+   },
+   "17": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "18"
+    ],
+    "context": "build"
+   },
+   "18": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "19": {
+    "ref": "corrade/2020.06#0895988f51a779301903a218ba871f8a",
+    "context": "build"
+   },
+   "20": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "21"
+    ],
+    "context": "build"
+   },
+   "21": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "22": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "23"
+    ],
+    "context": "build"
+   },
+   "23": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "24": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "25"
+    ],
+    "context": "build"
+   },
+   "25": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "26": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "27"
+    ],
+    "context": "build"
+   },
+   "27": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "28": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "29"
+    ],
+    "context": "build"
+   },
+   "29": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "30": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "31"
+    ],
+    "context": "build"
+   },
+   "31": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "32": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "33"
+    ],
+    "context": "build"
+   },
+   "33": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "34": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "35"
+    ],
+    "context": "build"
+   },
+   "35": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "36": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "37"
+    ],
+    "context": "build"
+   },
+   "37": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "38": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "39"
+    ],
+    "context": "build"
+   },
+   "39": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "40": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "41"
+    ],
+    "context": "build"
+   },
+   "41": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "42": {
+    "ref": "corrade/2020.06#0895988f51a779301903a218ba871f8a",
+    "context": "build"
+   },
+   "43": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "44"
+    ],
+    "context": "build"
+   },
+   "44": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "45": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "46"
+    ],
+    "context": "build"
+   },
+   "46": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "47": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "48"
+    ],
+    "context": "build"
+   },
+   "48": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "49": {
+    "ref": "corrade/2020.06#0895988f51a779301903a218ba871f8a",
+    "context": "build"
+   },
+   "50": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "51"
+    ],
+    "context": "build"
+   },
+   "51": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   },
+   "52": {
+    "ref": "emsdk/2.0.30#57e5ba61ee4f35abdb6c0abc549e0c7a",
+    "requires": [
+     "53"
+    ],
+    "context": "build"
+   },
+   "53": {
+    "ref": "nodejs/16.3.0#1354fe561d3d85b00aecf389968a5929",
+    "context": "build"
+   }
+  },
+  "revisions_enabled": true
+ },
+ "version": "0.4"
+}
