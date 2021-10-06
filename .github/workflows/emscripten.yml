@@ -3,19 +3,39 @@ on: [push]
 jobs:
   build_emscripten:
     runs-on: ubuntu-latest
-    container: conanio/gcc11-ubuntu16.04:1.39.0 # your docker image
+    container: 
+      image: conanio/gcc11-ubuntu16.04:1.39.0
     env:
       CONAN_USER_HOME: /home/conan
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Check out repository code
+        # uses: actions/checkout@v2
+        working-directory: /home/conan
+        run: |
+          git clone https://github.com/${{ github.repository }}.git
+          cd ${{ github.event.repository.name }}
+          git checkout ${{ github.ref }}
+
       - name: Configure Conan
         run: |
           conan config set general.revisions_enabled=1
+          conan config install https://github.com/conan-io/conanclientcert.git
           conan --version
+
       - name: Prepare deps
+        working-directory: /home/conan/${{ github.event.repository.name }}
         run: |
-          ls -la .
+          cp .conan/settings.yml /home/conan/.conan/settings.yml
           conan export .conan/recipes/magnum/all/conanfile.py magnum/2020.06@
-          mkdir cmake-build-emsdk && cd cmake-build-emsdk
+          mkdir cmake-build-emsdk
+
+      - name: Build
+        working-directory: /home/conan/${{ github.event.repository.name }}/cmake-build-emsdk
+        run: |
           conan lock create --profile:host=../.conan/profiles/emsdk --profile:build=default --lockfile=../lockfile.json --lockfile-out=lockfile.json --name=viewer --version=0.1 ../conanfile.txt --build --update
+          conan install --lockfile=lockfile.json ../conanfile.txt --build=missing --generator=virtualenv
+          source activate.sh
+          cmake .. -DCMAKE_MODULE_PATH=$(pwd) -DCMAKE_TOOLCHAIN_FILE=$CONAN_CMAKE_TOOLCHAIN_FILE
+          make
+
       - run: echo "🍏 This job's status is ${{ job.status }}."
