@@ -1,0 +1,13 @@
+[requires]
+magnum/2020.06
+magnum-plugins/2020.06
+
+[generators]
+cmake
+cmake_find_package
+
+[imports]
+bin, *.dll -> ./bin # Copies all dll files from packages bin folder to my local "bin" folder
+lib, *.dylib* -> ./bin # Copies all dylib files from packages lib folder to my local "bin" folder
+lib, *.so* -> ./bin # Copies all dylib files from packages lib folder to my local "bin" folder
+lib, *.conf* -> ./bin # Copies all dylib files from packages lib folder to my local "bin" folder
