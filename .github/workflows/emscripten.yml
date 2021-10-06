@@ -8,6 +8,13 @@ jobs:
       CONAN_USER_HOME: /home/conan
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: pwd
-      - run: conan --version
+      - name: Configure Conan
+        run: |
+          conan config set general.revisions_enabled=1
+          conan --version
+      - name: Prepare deps
+        run: |
+          conan export .conan/recipes/magnum/all/conanfile.py magnum/2020.06@
+          mkdir cmake-build-emsdk && cd cmake-build-emsdk
+          conan lock create --profile:host=../.conan/profiles/emsdk --profile:build=default --lockfile=../lockfile.json --lockfile-out=lockfile.json --name=viewer --version=0.1 ../conanfile.txt --build --update
       - run: echo "🍏 This job's status is ${{ job.status }}."
