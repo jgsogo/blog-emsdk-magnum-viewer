@@ -2,6 +2,7 @@ name: Emscripten
 on: [push]
 jobs:
   build_emscripten:
+    runs-on: ubuntu-latest
     container: conanio/gcc11-ubuntu16.04:1.39.0 # your docker image
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
