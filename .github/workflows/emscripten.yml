@@ -16,6 +16,11 @@ jobs:
           cd ${{ github.event.repository.name }}
           git checkout ${{ github.ref }}
 
+      - name: Cache Conan packages
+        uses: actions/cache@v2
+        with:
+          path: /home/conan/.conan
+
       - name: Configure Conan
         run: |
           conan config set general.revisions_enabled=1
@@ -30,11 +35,14 @@ jobs:
           conan export .conan/recipes/libjpeg/all/conanfile.py libjpeg/9d@
           mkdir cmake-build-emsdk
 
-      - name: Build
+      - name: Build dependencies
         working-directory: /home/conan/${{ github.event.repository.name }}/cmake-build-emsdk
         run: |
           conan lock create --profile:host=../.conan/profiles/emsdk --profile:build=default --lockfile=../lockfile.json --lockfile-out=lockfile.json --name=viewer --version=0.1 ../conanfile.txt --build --update
           conan install --lockfile=lockfile.json ../conanfile.txt --build=missing --generator=virtualenv
+          conan remove "*" --builds --force
+
+      - name: Build the project
           source activate.sh
           cmake .. -DCMAKE_MODULE_PATH=$(pwd) -DCMAKE_TOOLCHAIN_FILE=$CONAN_CMAKE_TOOLCHAIN_FILE
           make
