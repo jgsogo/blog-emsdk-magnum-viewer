@@ -44,7 +44,9 @@ jobs:
           conan remove "*" --src --force
 
       - name: Build the project
-          source activate.sh
+        working-directory: /home/conan/${{ github.event.repository.name }}/cmake-build-emsdk
+        run: |
+          ./activate.sh
           cmake .. -DCMAKE_MODULE_PATH=$(pwd) -DCMAKE_TOOLCHAIN_FILE=$CONAN_CMAKE_TOOLCHAIN_FILE
           make
 
