@@ -58,3 +58,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: /home/conan/${{ github.event.repository.name }}/cmake-build-emsdk/bin
+          single-commit: true
