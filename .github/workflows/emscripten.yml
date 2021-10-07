@@ -49,7 +49,7 @@ jobs:
         run: |
           pwd
           ls -la
-          . activate.sh
+          . /home/conan/${{ github.event.repository.name }}/cmake-build-emsdk/activate.sh
           cmake .. -DCMAKE_MODULE_PATH=$(pwd) -DCMAKE_TOOLCHAIN_FILE=$CONAN_CMAKE_TOOLCHAIN_FILE
           make
 
