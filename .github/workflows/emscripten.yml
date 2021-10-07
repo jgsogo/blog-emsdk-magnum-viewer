@@ -41,6 +41,7 @@ jobs:
           conan lock create --profile:host=../.conan/profiles/emsdk --profile:build=default --lockfile=../lockfile.json --lockfile-out=lockfile.json --name=viewer --version=0.1 ../conanfile.txt --build --update
           conan install --lockfile=lockfile.json ../conanfile.txt --build=missing --generator=virtualenv
           conan remove "*" --builds --force
+          conan remove "*" --src --force
 
       - name: Build the project
           source activate.sh
