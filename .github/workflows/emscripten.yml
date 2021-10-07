@@ -47,8 +47,6 @@ jobs:
       - name: Build the project
         working-directory: /home/conan/${{ github.event.repository.name }}/cmake-build-emsdk
         run: |
-          pwd
-          ls -la
           . /home/conan/${{ github.event.repository.name }}/cmake-build-emsdk/activate.sh
           cmake .. -DCMAKE_MODULE_PATH=$(pwd) -DCMAKE_TOOLCHAIN_FILE=$CONAN_CMAKE_TOOLCHAIN_FILE
           make
