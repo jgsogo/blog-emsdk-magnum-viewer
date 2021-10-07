@@ -131,7 +131,7 @@
     "context": "host"
    },
    "14": {
-    "ref": "libjpeg/9d#e697546ac363c54eae00117f83501c40",
+    "ref": "libjpeg/9d#80e3d31097c97089ab23eb07ff680d2c",
     "build_requires": [
      "26"
     ],

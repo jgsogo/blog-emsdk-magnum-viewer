@@ -27,6 +27,7 @@ jobs:
         run: |
           cp .conan/settings.yml /home/conan/.conan/settings.yml
           conan export .conan/recipes/magnum/all/conanfile.py magnum/2020.06@
+          conan export .conan/recipes/libjpeg/all/conanfile.py libjpeg/9d@
           mkdir cmake-build-emsdk
 
       - name: Build

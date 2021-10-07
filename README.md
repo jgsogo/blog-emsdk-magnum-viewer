@@ -16,10 +16,13 @@ Steps to follow:
     conan config set general.revisions_enabled=1
     ```
 
- 1. Export modified `magnum` to local cache
+ 1. Export some slightly modified recipes to local cache:
+    * `magnum` prepared for emscripten (using SDL2 port)
+    * `libjpeg` with a workaround for https://github.com/conan-io/conan/issues/7526
 
     ```
     conan export .conan/recipes/magnum/all/conanfile.py magnum/2020.06@
+    conan export .conan/recipes/libjpeg/all/conanfile.py libjpeg/9d@
     ```
 
  1. Create and move to your folder directory
@@ -40,7 +43,7 @@ Steps to follow:
     conan install --lockfile=lockfile.json ../conanfile.txt --build=missing --generator=virtualenv
     ```
 
- 1. Configure and build using CMake
+ 1. Configure and cross-build using CMake
 
     ```
     source activate.sh
