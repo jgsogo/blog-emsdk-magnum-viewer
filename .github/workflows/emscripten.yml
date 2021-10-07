@@ -19,6 +19,7 @@ jobs:
       - name: Cache Conan packages
         uses: actions/cache@v2
         with:
+          key: conan-cache
           path: /home/conan/.conan
 
       - name: Configure Conan
