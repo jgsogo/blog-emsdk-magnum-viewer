@@ -51,11 +51,15 @@ jobs:
           cmake .. -DCMAKE_MODULE_PATH=$(pwd) -DCMAKE_TOOLCHAIN_FILE=$CONAN_CMAKE_TOOLCHAIN_FILE
           make
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.5
-        with:
-          repository-name: ${{ github.repository }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: /home/conan/${{ github.event.repository.name }}/cmake-build-emsdk/bin
-          single-commit: true
+      - name: Deploy to gh-pages
+        working-directory: /home/conan/${{ github.event.repository.name }}/cmake-build-emsdk
+        run: |
+          cd bin
+          git init .
+          git checkout -b gh-pages
+          git add .
+          git config user.email "actions@github.com"
+          git config user.name "GitHub actions"
+          git commit -m "Automatic from Github actions"
+          git remote add origin-pages https://jgsogo:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git > /dev/null 2>&1
+          git push --quiet --force --set-upstream origin-pages gh-pages 
