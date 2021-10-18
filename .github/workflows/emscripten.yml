@@ -55,6 +55,7 @@ jobs:
         working-directory: /home/conan/${{ github.event.repository.name }}/cmake-build-emsdk
         run: |
           cd bin
+          echo "jgsogo.es" > CNAME
           git init .
           git checkout -b gh-pages
           git add .
